@@ -37,7 +37,7 @@ void display(int arr[9][9])
     }
     printf("\n");
 }
-bool isInnerRepeatingUtil(int arr[9])
+bool isInnerRepeatingUtil(int *arr)
 {
     bool check = false;
     for (int i = 0; i < 9; i++)
