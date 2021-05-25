@@ -54,7 +54,7 @@ bool isInnerRepeatingUtil(int arr[9])
 bool isInnerRepeating(int arr[9][9])
 {
     bool check = false;
-    int temp[9], count, i = 0, j = 0, ic = 2, jc = 2, in = 0, jn = 0;
+    int *temp, count, i = 0, j = 0, ic = 2, jc = 2, in = 0, jn = 0;
 
     do
     {
@@ -150,7 +150,7 @@ void generate(int arr[9][9])
     }
 
     int row, column, sgrad;
-    char str[20] = "", c;
+    char str[20] = "", c = 'a';
 
     do
     {
@@ -159,14 +159,17 @@ void generate(int arr[9][9])
         printf("Fuer -Anfaenger Niveau- druecke bitte '1' \n");
 
         fgets(str, 20, stdin);
-        c = str[0];
+        if (strlen(str) == 2)
+        {
+            c = str[0];
+        }
 
-        if (strlen(str) > 1 && !(c == '1' || c == '2' || c == '3'))
+        if (strlen(str) != 2 || !(c == '1' || c == '2' || c == '3'))
         {
             printf("\n\nUnzulaessige Eingabe!\n\n");
         }
 
-    } while (strlen(str) > 1 && !(c == '1' || c == '2' || c == '3'));
+    } while (!(c == '1' || c == '2' || c == '3'));
 
     sgrad = c - 48;
     sgrad = sgrad * 15 + 15;
