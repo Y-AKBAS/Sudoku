@@ -54,7 +54,8 @@ bool isInnerRepeatingUtil(int *arr)
 bool isInnerRepeating(int arr[9][9])
 {
     bool check = false;
-    int *temp, count, i = 0, j = 0, ic = 2, jc = 2, in = 0, jn = 0;
+    int *temp = (int *)malloc(10 * sizeof(int));
+    int count, i = 0, j = 0, ic = 2, jc = 2, in = 0, jn = 0;
 
     do
     {
@@ -90,7 +91,7 @@ bool isInnerRepeating(int arr[9][9])
         i = in;
 
     } while (in != 9);
-
+    free(temp);
     return check;
 }
 
