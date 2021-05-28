@@ -73,6 +73,7 @@ bool isInnerRepeating(int arr[9][9])
 
         if (isInnerRepeatingUtil(temp))
         {
+            free(temp);
             check = true;
             return check;
         }
